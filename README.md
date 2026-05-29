@@ -14,6 +14,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 ![Element Plus](https://img.shields.io/badge/Element%20Plus-409EFF?style=flat-square&logo=element&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Stars](https://img.shields.io/github/stars/jiangkun040919/-All-in-One-Prompt-Engineering-Toolbox-Manage-Score-Optimize-Compare-AI-Prompts?style=flat-square&color=yellow)
 
 <br/>
 
@@ -40,7 +41,7 @@
 <tr>
 <td width="50%">
 
-### Prompt 管理
+### 📝 Prompt 管理
 - 分类、标签、收藏，像管理代码一样管理 Prompt
 - `{{变量}}` 语法自动提取，一条 Prompt 适配多种场景
 - 版本历史，每一次修改都有迹可循
@@ -49,7 +50,7 @@
 </td>
 <td width="50%">
 
-### AI 评分
+### 🏆 AI 评分
 - 四维度量化评估：**清晰度 · 具体性 · 结构性 · 完整性**
 - 每项 1-25 分，总分 100，告别"感觉还行"
 - 支持 DeepSeek / 通义千问 / OpenAI 多模型打分
@@ -59,7 +60,7 @@
 <tr>
 <td>
 
-### 多模型对比
+### 🔀 多模型对比
 - 同一条 Prompt 同时发给多个模型
 - 并排查看输出结果、Token 用量、响应延迟
 - 用数据说话，找到最适合你场景的模型
@@ -67,7 +68,7 @@
 </td>
 <td>
 
-### AI 优化
+### ✨ AI 优化
 - AI 自动重写 Prompt，提升清晰度和结构
 - 可指定优化目标和目标模型
 - 优化结果一键评分、复制，或继续迭代
@@ -95,6 +96,7 @@
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Node.js](https://nodejs.org/) >= 18
+- （可选）[Docker](https://www.docker.com/) & Docker Compose
 
 ### 方式一：Docker Compose（推荐）
 
@@ -106,7 +108,7 @@ cd -All-in-One-Prompt-Engineering-Toolbox-Manage-Score-Optimize-Compare-AI-Promp
 cp .env.example .env
 # 编辑 .env 填入 API Key
 
-# 启动
+# 一键启动
 docker-compose up -d
 ```
 
@@ -114,7 +116,7 @@ docker-compose up -d
 
 ### 方式二：本地开发
 
-**启动后端**
+**① 启动后端**
 
 ```bash
 cd backend/PromptCraft.Api
@@ -123,7 +125,7 @@ dotnet run
 
 后端运行在 `http://localhost:5076`，Swagger 文档：`http://localhost:5076/openapi`
 
-**启动前端**
+**② 启动前端**
 
 ```bash
 cd frontend/frontend
@@ -133,17 +135,17 @@ npm run dev
 
 前端运行在 `http://localhost:5173`
 
-**配置 AI 模型**
+**③ 配置 AI 模型**
 
 进入 **模型管理** 页面，添加模型连接：
 
-| 提供商 | 模型 | API 地址 |
+| 提供商 | 推荐模型 | API 地址 |
 |--------|------|----------|
 | DeepSeek | deepseek-chat / deepseek-reasoner | `https://api.deepseek.com/v1` |
 | 通义千问 | qwen-plus / qwen-turbo | `https://dashscope.aliyuncs.com/compatible-mode/v1` |
 | OpenAI | gpt-4o-mini / gpt-4o | `https://api.openai.com/v1` |
 
-填入 API Key，点击"测试连接"即可。
+填入 API Key，点击「测试连接」验证后即可使用。
 
 ---
 
@@ -162,7 +164,7 @@ npm run dev
 | `POST` | `/api/ai/optimize` | AI 优化 |
 | `POST` | `/api/ai/compare` | 多模型对比 |
 
-启动后端后访问 `/openapi` 查看完整文档。
+启动后端后访问 `/openapi` 查看完整 Swagger 文档。
 
 ---
 
@@ -185,14 +187,27 @@ promptcraft/
 │           ├── router/             # 路由配置
 │           └── stores/             # Pinia 状态管理
 ├── docker-compose.yml              # Docker 部署配置
+├── .env.example                    # 环境变量示例
 └── README.md
 ```
 
 ---
 
+## 贡献指南
+
+欢迎提交 Issue 和 Pull Request！
+
+1. Fork 本仓库
+2. 创建特性分支：`git checkout -b feature/your-feature`
+3. 提交改动：`git commit -m 'feat: add your feature'`
+4. 推送分支：`git push origin feature/your-feature`
+5. 发起 Pull Request
+
+---
+
 <div align="center">
 
-**如果这个项目对你有帮助，给个 Star 吧**
+**如果这个项目对你有帮助，欢迎给个 ⭐ Star**
 
 [![Star](https://img.shields.io/github/stars/jiangkun040919/-All-in-One-Prompt-Engineering-Toolbox-Manage-Score-Optimize-Compare-AI-Prompts?style=social)](https://github.com/jiangkun040919/-All-in-One-Prompt-Engineering-Toolbox-Manage-Score-Optimize-Compare-AI-Prompts)
 
